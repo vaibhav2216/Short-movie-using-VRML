@@ -1,5 +1,5 @@
 # Short-movie-using-VRML
-Computer Graphics Basic Project using VRML.
+Computer Graphics:- Basic Project using VRML.
 
 Problem Statement: Make a short movie using VRML.
 
