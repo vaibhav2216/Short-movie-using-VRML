@@ -1,0 +1,179 @@
+#VRML V2.0 utf8
+
+DEF World Transform {
+   
+   children [
+
+      DEF Car Group {
+	 children [
+	    DEF LeftFrontWheel Transform {
+	       translation	-4 0 2
+	       children [
+			   DEF wheel Transform {
+				   rotation	1 0 0 1.57
+				   children
+				   [
+					   		  Shape {
+		     appearance Appearance {
+				 texture	ImageTexture {
+					 url ["textures/wheel.jpg"]
+				 }
+		     }
+		     geometry
+		     DEF Wheel Cylinder {
+			height  0.5
+			radius	2
+		     }
+		  }
+				   ]
+			   }
+
+		 ]
+	    },
+	    DEF RightFrontWheel Transform {
+	       translation	-4 0 -2
+	       children [
+				USE	wheel
+		 ]
+	    },
+	    DEF LeftRearWheel Transform {
+	       translation	4 0 2
+	       children [
+				USE	wheel
+		 ]
+	    },
+	    DEF RightRearWheel Transform {
+	       translation	4 0 -2
+	       children [
+				USE	wheel
+		 ]
+	    },
+	  
+	    DEF Body Group {
+	       children [
+		  Shape {
+		     appearance Appearance {
+				texture	ImageTexture {
+						url	["textures/carbase.jpg"]
+					}
+		     }
+		     geometry
+		     Box {
+			size	12 2 4
+		     }
+		  }
+		  Transform	{
+			translation	2 2 0
+			children Shape
+			{
+				geometry Box {
+					 size 8 2 4
+				}
+				appearance Appearance
+				{
+					texture	ImageTexture {
+						url["textures/carwindow.jpg"]
+					}
+				}
+			}
+		  }
+		 ]
+	    },
+	    DEF RightHeadLight Transform {
+	       translation	-6 0.6 -1
+	       children [
+		  DEF HeadLight Group {
+		     children [
+			Transform {
+			   translation	-0.4 0 0
+			   rotation	0 0 1  -1.5708
+			   children [
+			      Shape {
+				 appearance
+				 Appearance {
+				    material
+				    DEF HeadLightMaterial Material {
+				       diffuseColor	1 0 0
+				    }
+				 }
+				 geometry
+				 DEF HeadLightCone Cone {
+				    bottomRadius	0.18
+				    height	1
+				 }
+			      }
+			     ]
+			},
+			Transform {
+			   translation	-0.9 0 0
+			   children [
+			      DEF HeadLightPointLight PointLight {
+				 intensity	1
+				 color	1 1 0.9
+			      },
+			      Shape {
+				 appearance
+				 Appearance {
+				    material
+				    DEF PointLightMaterial Material {
+				       emissiveColor	1 1 0
+				    }
+				 }
+				 geometry
+				 DEF PointLightSphere Sphere {
+				    radius	0.2
+				 }
+			      }
+			     ]
+			}
+		       ]
+		  }
+		 ]
+	    },
+	    DEF LeftHeadLight Transform {
+	       translation	-6 0.6 1
+	       children [
+		  Group {
+		     children [
+			Transform {
+			   translation	-0.4 0 0
+			   rotation	0 0 1  -1.5708
+			   children [
+			      Shape {
+				 appearance
+				 Appearance {
+				    material USE HeadLightMaterial
+				 }
+				 geometry
+				 Cone {
+				    bottomRadius	0.18
+				    height	1
+				 }
+			      }
+			     ]
+			},
+			Transform {
+			   translation	-0.9 0 0
+			   children [
+			      PointLight {
+				 intensity	1
+				 color	1 1 0.9
+			      },
+			      Shape {
+				 appearance
+				 Appearance {
+				    material USE PointLightMaterial
+				 }
+				 geometry USE PointLightSphere
+			      }
+			     ]
+			}
+		       ]
+		  }
+		 ]
+	    }
+	   ]
+      },
+
+     ]
+}

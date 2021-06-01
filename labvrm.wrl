@@ -1,0 +1,256 @@
+#VRML V2.0 utf8
+DEF labbase Transform {	
+	children [
+
+				Shape{
+					geometry Box{
+						size 100 2 100
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/labbase.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+
+	 DEF	controlcentre Transform	{
+	translation	10 2 10
+	children [
+		#labbase
+		Transform {
+			translation	0 2.5 0
+			children [
+				Shape{
+					geometry Box{
+						size 12.5 5 12.5
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/labwall.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+				
+			]
+		}
+		#roofbase
+		Transform {
+			translation	0 5.5 0
+			children [
+				Shape{
+					geometry Box{
+						size 14.5 1 14.5
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/labroof.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+				
+			]
+		}
+		#roofDome
+ 		Transform {
+			translation	0 6 0
+			children [
+				Shape{
+					geometry Sphere {
+						radius 6
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/roofdome.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+				
+			]
+		}
+	
+	]
+}
+DEF	building1 Transform	{
+	translation	10 2 -10
+	children [
+		Shape{
+			geometry Box{
+				size 3 3 6
+			}
+			appearance DEF tempbuilding Appearance {
+				texture	ImageTexture {
+					url	["textures/whitemetalsheet.jpg"]
+					repeatS	TRUE
+					repeatT	TRUE
+				}
+			}
+		}
+	]
+}
+DEF	building2 Transform	{
+	translation	2 2 -10
+	children [
+		Shape{
+			geometry Box{
+				size 3 3 6
+			}
+			appearance USE tempbuilding
+			
+		}
+	]
+}
+DEF	building3 Transform	{
+	translation	-6 2 -10
+	children [
+		Shape{
+			geometry Box{
+				size 3 3 6
+			}
+			appearance USE tempbuilding
+			
+		}
+	]
+}
+DEF	building4 Transform	{
+	translation	2 2 -18
+	children [
+		Shape{
+			geometry Box{
+				size 6 3 3
+			}
+			appearance USE tempbuilding
+			
+		}
+	]
+}
+DEF	nuketank1 Transform	{
+	translation	-20 2 30
+	children [
+		DEF	tankbase Transform {
+			translation	 0 0.5 0
+			children Shape {
+				geometry Box{
+					size 12 1 12
+				}
+				appearance DEF tankbase1 Appearance	{
+					material Material {
+					}
+				}
+			}
+		}
+		Transform {
+			translation	0 9 0
+			children Shape{
+				geometry Cylinder {
+					height 16
+					radius 5.5
+				}
+				appearance Appearance	{
+					material Material {
+					}
+				}
+			}
+
+		}
+	]
+}
+DEF	nuketank2 Transform	{
+	translation	-40 2 30
+	children [
+	 Transform {
+			translation	 0 0.5 0
+			children Shape {
+				geometry Box{
+					size 12 1 12
+				}
+				appearance DEF tankbase1 Appearance	{
+					material Material {
+					}
+				}
+			}
+		}
+		Transform {
+			translation	0 9 0
+			children Shape{
+				geometry Cylinder {
+					height 16
+					radius 5.5
+				}
+				appearance Appearance	{
+					material Material {
+					}
+				}
+			}
+
+		}
+	]
+}
+DEF	commompipe Transform {
+	translation	-30 5 30
+	children[
+			DEF	ending TouchSensor {}
+		Transform {
+			rotation 0 0 1 1.57
+			children Shape {
+				geometry Cylinder{
+					radius 0.5
+					height 20
+				}
+				appearance Appearance {
+					material Material {}
+				}
+			}
+		}
+	]
+}
+DEF	missilesite Transform {
+	translation	-30 2 -30
+	children [
+		Transform {
+			translation	0 1 0
+			children [
+				DEF	coll Collision
+				{
+								children Shape {
+				geometry Box {
+					size 10 2 10
+				}
+				appearance Appearance {
+					material Material {}
+				}
+			
+				}
+				collide	TRUE
+			}
+			]
+}
+	
+
+DEF	missile Transform {
+	translation	0 3.5 0
+	children [
+		DEF	touchmissile TouchSensor {}
+		DEF	colmissile Collision
+		{
+			children [
+			Inline { url ["missle.wrl"] }
+		]
+		collide	TRUE
+		}
+
+		
+	]
+}
+
+	]
+}
+	]
+}

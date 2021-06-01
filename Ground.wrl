@@ -1,0 +1,467 @@
+#VRML V2.0 utf8
+
+Group {
+   children [
+      #ground
+      Shape {
+	appearance Appearance {
+		
+		
+			texture ImageTexture {
+				 url [
+				  "textures/grass.jpg"
+				 ]
+			 }
+			 textureTransform TextureTransform {
+				scale 100 100
+			}
+		}
+	geometry Box {
+	    size 100.0 0.1 100.0
+	}
+      }
+      ,
+      Transform {
+       translation -25.0 0.0 -25.0
+       scale .04 .04 .04
+       rotation     0.0 0.0  0.0 1.57
+             children [
+                Inline {
+                   url "building4.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation -20.0 0.0 35.0
+       scale .006 .006 .006
+       rotation     0.0 0.0  0.0 1.57
+             children [
+                Inline {
+                   url "building1.wrl"
+                }
+             ]
+    
+    } 
+    Transform {
+       translation 30.0 14.0 23.0
+       scale .9 .7 .9
+       rotation     0.0 0.0  0.0 1.57
+             children [
+                Inline {
+                   url "cityv.wrl"
+                }
+             ]
+    
+    } 
+    Transform {
+       translation 25.0 0.0 -50.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -53.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -56.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -59.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -62.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -65.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -68.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -71.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -74.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -77.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -80.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+
+    Transform {
+       translation 25.0 0.0 -83.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -86.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    Transform {
+       translation 25.0 0.0 -89.0
+       rotation     0.0 1.0  0.0 1.57
+             children [
+                Inline {
+                   url "RandomTrees.wrl"
+                }
+             ]
+    
+    }
+    #Bus stop at the Right Side
+    Transform {
+       translation 10.0 0.2 25.2
+       rotation     0.0 0.0  0.0 1.57
+       scale .145 .145 .145
+             children [
+                Inline {
+                   url "Busstop.wrl"
+                }
+             ]
+    
+    }
+
+
+      #The road along the z-axis
+      Shape {
+	  appearance Appearance {
+		
+		
+			texture ImageTexture {
+				 url [
+				  "textures/road.jpg"
+				 ]
+			 }
+			 textureTransform TextureTransform {
+				scale 100 100
+			}
+		}
+	
+	geometry Box {
+	    size 15.0 0.12 100.0
+	}
+      },
+      #The traffic island on that road
+      Transform { 
+         translation -0.2 0.0 8.8
+            children [
+               Inline {
+                 url "TrafficIsland.wrl"
+               }
+            ]
+      },
+      Transform {
+         translation 0.2 0.0 -8.8
+         rotation 0.0 1.0 0.0 3.14
+            children [
+               Inline {
+                 url  "TrafficIsland.wrl"
+               }
+            ]
+      }, 
+      Transform {
+        translation 0.0 0.0 0.0
+        children[
+           Inline {
+             url "Roadmarkings1.wrl"
+           }
+        ]
+      }
+      Transform {
+        rotation 0.0 1.0 0.0 3.14
+        children [
+           Inline {
+              url "Roadmarkings1.wrl"
+           }
+        ]
+      },
+      #Road
+      Shape {
+	appearance Appearance {
+		
+		
+			texture ImageTexture {
+				 url [
+				  "textures/road.jpg"
+				 ]
+			 }
+			 textureTransform TextureTransform {
+				scale 100 100
+			}
+		}
+	geometry Box {
+	    size 100.0 0.12 10.0
+	}
+      },
+      Transform {
+        translation 0.0 0.0 0.0
+        children [
+            Inline {
+              url "Roadmarkings2.wrl"
+            }
+        ]
+      },
+      Transform {
+        rotation 0.0 1.0 0.0 3.14
+        children [
+            Inline {
+              url "Roadmarkings2.wrl"
+            }
+        ]
+      },
+      #Wall
+      Transform {
+        translation -10.0 0.0 50.0
+         children [
+           Inline {
+             url "wall.wrl"
+           }
+         ]
+      },
+      #Path
+      Transform {
+        translation -10.0 0.0 50.0
+         children [
+           Inline {
+             url "Path.wrl"
+           }
+         ]
+      },
+      #Wall
+      Transform {
+        translation -10.0 1.0 -50.0
+        rotation     1.0 0.0 0.0 3.14
+          children [
+           Inline {
+             url "wall.wrl"
+           }
+         ]
+      },
+      #Path
+      Transform {
+        translation -10.0 0.19 -50.0
+        rotation      1.0 0.0 0.0 3.14
+         children [
+           Inline {
+             url "Path.wrl"
+           }
+         ]
+      },
+      #Wall
+      Transform {
+        translation 10.0 0.0 -50.0
+        rotation     0.0 1.0 0.0 3.14
+         children [
+           Inline {
+             url "wall.wrl"
+           }
+         ]
+      },
+      #Path
+      Transform {
+        translation 10.0 0.0 -50.0
+        rotation     0.0 1.0 0.0 3.14
+         children [
+           Inline {
+             url "Path.wrl"
+           }
+         ]
+      },
+      #Wall
+      Transform {
+        translation 10.0 1.0 50.0
+        rotation     0.0 0.0 1.0 3.14
+         children [
+           Inline {
+             url "wall.wrl"
+           }
+         ]
+      },
+      #Path
+      Transform {
+        translation 10.0 0.19 50.0
+        rotation     0.0 0.0 1.0 3.14
+         children [
+           Inline {
+             url "Path.wrl"
+           }
+         ]
+      },
+      #Trees
+    #  Transform {
+  #       translation 11.0 0.0 -8.5
+   #        children [
+  #           Inline {
+  #              url "trees.wrl"
+   #          }
+  #         ]
+ #     }
+
+      Transform {
+          translation  -9.9 0.0 14.1
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  9.9 0.0 14.1          
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  -9.9 0.0 -14.1
+          rotation 0.0 1.0 0.0 3.14
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  9.9 0.0 -14.1
+          rotation 0.0 1.0 0.0 3.14
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  -9.9 0.0 7.1
+          rotation 0.0 1.0 0.0 -1.57
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  9.9 0.0 7.1
+          rotation 0.0 1.0 0.0 1.57
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  -9.9 0.0 -7.1
+          rotation 0.0 1.0 0.0 -1.57
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  9.9 0.0 -7.1
+          rotation 0.0 1.0 0.0 1.57
+          children [
+             Inline {
+                url "Pillarline.wrl"
+             }
+          ]
+      }
+      Transform {
+          translation  -16.0 4.0 -10.0
+          rotation      0.0 1.0 0.0 0.438
+          children [
+             Inline {
+                url "billboard.wrl"
+             }
+          ]
+      }   
+   ]
+}

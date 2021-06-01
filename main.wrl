@@ -1,0 +1,1149 @@
+#VRML V2.0 utf8
+Background {
+   groundColor [1 1 1]
+   groundAngle 1
+   skyColor [0.42 0.63 0.89, 0.42 0.63 0.89]
+   skyAngle 1.64
+     
+   
+}
+DEF SOUND Sound {
+   minBack  500
+   minFront 500
+   maxBack  500
+   maxFront 500
+   intensity 0.2
+   source DEF AC AudioClip {
+      loop TRUE
+      url "sounds/002.wav"
+   }
+   spatialize FALSE
+}
+DEF SOUND1 Sound {
+   minBack  1
+   minFront 1
+   maxBack  500
+   maxFront 500
+   priority 1.0
+   source DEF AC1 AudioClip {
+      url "sounds/mixs1.wav"
+   }
+   spatialize TRUE
+}
+DEF Fire Transform {
+		translation	100 -50 0
+	children [
+		Shape {
+			geometry Sphere	{
+				radius 40
+			}
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["textures/flume.jpg"]
+				}
+			}
+		}
+	]
+}
+DEF	land Transform{
+
+	children[
+
+		Shape {
+			appearance Appearance {
+				texture ImageTexture {
+        		url ["textures/deserttext.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+			
+			}
+			geometry Box{
+				size 500 0 100
+			}
+		}
+
+	]
+}
+DEF	labwall1 Transform {
+	translation 49 4 0
+	children	Shape {
+		geometry Box {
+			size 2 8 100
+		}
+		appearance  DEF	borderwall Appearance {
+			texture	ImageTexture {
+				url	["textures/borderwall.jpg"]
+			}
+		}
+	}
+}
+DEF	labwall3 Transform {
+	translation	151 4 0
+	children Shape{
+		geometry Box{
+			size 2 8 100
+		}
+		appearance USE borderwall
+	}
+}
+DEF	labpost Transform {
+	translation	49 4 0
+	children
+	[
+		Shape {
+		geometry Box{
+			size 3 12 10
+		}
+		appearance DEF borderpost Appearance {
+				texture ImageTexture {
+        		url ["textures/labpost.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }			
+		}
+	}
+	
+
+	] 
+}
+
+DEF	labpost3 Transform {
+	translation	 151 6 0
+	children Shape{
+		geometry Box{
+			size 3 12 10
+		}
+		appearance USE borderpost
+	}
+}
+DEF labbase Transform {	
+	translation	100 0 0
+	children [
+
+				Shape{
+					geometry Box{
+						size 100 2 100
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/labbase.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+
+DEF	controlcentre Transform	{
+	translation	10 1 10
+	children [
+		#labbase
+		Transform {
+			translation	0 2.5 0
+			children [
+				Shape{
+					geometry Box{
+						size 12.5 5 12.5
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/labwall.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+				
+			]
+		}
+		Transform {
+			translation	6.25 1.25 0
+			children Shape{
+				geometry Box{
+					size 0.5 2.5 5
+				}
+				appearance DEF bdoor Appearance	{
+					texture	ImageTexture {
+						url	["textures/basedoor.jpg"]
+					}
+				}
+			}
+		}
+		Transform {
+			translation	-6.25 1.25 0
+			children Shape{
+				geometry Box{
+					size 0.5 2.5 5
+				}
+				appearance USE bdoor
+			}
+		}
+		Transform {
+			translation	0 1.25 6.25
+			children Shape{
+				geometry Box{
+					size 5 2.5 0.5
+				}
+				appearance USE bdoor
+			}
+		}
+		Transform {
+			translation	0 1.25 -6.25
+			children Shape{
+				geometry Box{
+					size 5 2.5 0.5
+				}
+				appearance USE bdoor
+			}
+		}
+		#roofbase
+		Transform {
+			translation	0 5.5 0
+			children [
+				Shape{
+					geometry Box{
+						size 14.5 1 14.5
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/labroof.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+				
+			]
+		}
+		#roofDome
+ 		Transform {
+			translation	0 6 0
+			children [
+				Shape{
+					geometry Sphere {
+						radius 6
+					}
+					appearance DEF APP1 Appearance {
+				texture ImageTexture {
+        		url ["textures/roofdome.jpg"]
+        		repeatS TRUE
+    			repeatT TRUE
+        }
+					 }
+				}
+				
+			]
+		}
+	
+	]
+}
+DEF	photo Transform	{
+	translation	25 2 -25
+	children[
+		Transform {
+			translation	0 0.5 0
+			children Shape{
+					geometry Box{
+			size 5 1 2
+		}
+		appearance Appearance {
+			texture	ImageTexture {
+				url["textures/commonpiepe.jpg"]
+			}
+		}	
+			}
+		}
+		Transform {
+			translation	0 4 0
+			children  Shape {
+		   	geometry Box{
+					size 4 6 1
+				}
+				appearance Appearance {
+					   texture	ImageTexture {
+				url["textures/aladeenphoto.jpg"]
+			}
+				}
+	}
+		}
+	
+	]
+	
+
+}
+DEF	namewadiya Transform {
+	translation 40 3 20 
+	children Shape {
+		geometry Box{
+			size 10 5 2
+		}
+		appearance Appearance {
+			texture	ImageTexture {
+				url["textures/download.png"]
+			}
+		}
+	}
+}
+DEF	namewadiya2 Transform {
+	translation -40 3 20 
+	children Shape {
+		geometry Box{
+			size 10 5 2
+		}
+		appearance Appearance {
+			texture	ImageTexture {
+				url["textures/download.png"]
+			}
+		}
+	}
+}
+DEF	building1 Transform	{
+	translation	10 2 -10
+	children [
+		DEF	ending TouchSensor {}
+		Shape{
+			geometry Box{
+				size 3 3 6
+			}
+			appearance DEF tempbuilding Appearance {
+				texture	ImageTexture {
+					url	["textures/whitemetalsheet.jpg"]
+					repeatS	TRUE
+					repeatT	TRUE
+				}
+			}
+		}
+	]
+}
+DEF	building2 Transform	{
+	translation	2 2 -10
+	children [
+		Shape{
+			geometry Box{
+				size 3 3 6
+			}
+			appearance USE tempbuilding
+			
+		}
+	]
+}
+DEF	building3 Transform	{
+	translation	-6 2 -10
+	children [
+		Shape{
+			geometry Box{
+				size 3 3 6
+			}
+			appearance USE tempbuilding
+			
+		}
+	]
+}
+DEF	building4 Transform	{
+	translation	2 2 -18
+	children [
+		Shape{
+			geometry Box{
+				size 6 3 3
+			}
+			appearance USE tempbuilding
+			
+		}
+	]
+}
+DEF	nuketank1 Transform	{
+	translation	-20 1 30
+	children [
+		DEF	tankbase Transform {
+			translation	 0 0.5 0
+			children Shape {
+				geometry Box{
+					size 12 1 12
+				}
+					appearance DEF tankbase1 Appearance {
+					texture	ImageTexture {
+						url["textures/tankbase.jpg"]
+					}
+				}
+			}
+		}
+		Transform {
+			translation	0 9 0
+			rotation 0 1 0 -3.14
+			children Shape{
+				geometry Cylinder {
+					height 16
+					radius 5.5
+				}
+				appearance Appearance {
+					texture	ImageTexture {
+						url["textures/nuketank.png"]
+					}
+				}
+			}
+
+		}
+				Transform {
+			translation	0 17.5 0
+						children Shape{
+				geometry Cylinder {
+					height 1
+					radius 5.5
+				}
+				appearance Appearance {
+					texture	ImageTexture {
+							url["textures/missilesite.jpg"]
+					}
+				}
+			}
+		}
+	]
+}
+DEF	nuketank2 Transform	{
+	translation	-40 1 30
+	children [
+	 Transform {
+			translation	 0 0.5 0
+			children Shape {
+				geometry Box{
+					size 12 1 12
+				}
+				appearance USE tankbase1
+			}
+		}
+		Transform {
+			translation	0 9 0
+			rotation 0 1 0 -3.14
+			children Shape{
+				geometry Cylinder {
+					height 16
+					radius 5.5
+				}
+				appearance Appearance {
+					texture	ImageTexture {
+						url["textures/nuketank.png"]
+					}
+				}
+			}
+
+		}
+		Transform {
+			translation	0 17.5 0
+						children Shape{
+				geometry Cylinder {
+					height 1
+					radius 5.5
+				}
+				appearance Appearance {
+					texture	ImageTexture {
+							url["textures/missilesite.jpg"]
+					}
+				}
+			}
+		}
+	]
+}
+DEF	commompipe Transform {
+	translation	-30 5 30
+	children[
+			
+		Transform {
+			rotation 0 0 1 1.57
+			children Shape {
+				geometry Cylinder{
+					radius 0.5
+					height 20
+				}
+					appearance Appearance {
+					texture	ImageTexture {
+						url["textures/commonpiepe.jpg"]
+					}
+				}
+			}
+		}
+	]
+}
+DEF	button Transform {
+	translation	-30 -5 -20
+	children [
+		DEF	touchbutton TouchSensor {}
+		Transform {
+			translation	0 1 0
+			children Shape {
+				geometry Box {
+					size 5 2 5
+				}
+				appearance Appearance {
+					texture	ImageTexture {
+						url["textures/missilesite.jpg"]
+					}
+				}
+			}
+		}
+		Transform {
+			translation	0 1.5 0
+			children Shape {
+				geometry Cylinder {
+					height 3
+					radius 1.5
+				}
+					appearance Appearance {
+					texture	ImageTexture {
+						url["textures/start.jpg"]
+					}
+				}
+				}
+			}
+	]
+
+}
+DEF	missilesite Transform {
+	translation	-30 2 -30
+	children [
+		Transform {
+			translation	0 1 0
+			children [
+				DEF	coll Collision
+				{
+								children Shape {
+				geometry Box {
+					size 10 2 10
+				}
+				appearance Appearance {
+					texture	ImageTexture {
+						url["textures/missilesite.jpg"]
+					}
+				}
+			
+				}
+				collide	TRUE
+			}
+			]
+}
+	
+
+DEF	missile Transform {
+	translation	0 3.5 0
+	children [
+		
+		DEF	colmissile Collision
+		{
+			children [
+			Inline { url ["missle.wrl"] }
+		]
+		collide	TRUE
+		}
+
+		
+	]
+}
+
+	]
+}
+DEF	people Group {
+	children [
+		DEF	p1 Transform
+		{
+			translation	51 2 0
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance DEF person Appearance {
+					texture	ImageTexture {
+						url["textures/personsoldier.jpg"]
+					}
+				}
+			}
+		}
+			DEF	p2 Transform
+		{
+			translation	51 2 1.5
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance USE person
+			}
+		}
+			DEF	p3 Transform
+		{
+			translation	51 2 0
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+			appearance USE person
+			}
+		}
+			DEF	p4 Transform
+		{
+			translation	51 2 -1.5
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance USE person
+			}
+		}
+		DEF	p5 Transform
+		{
+			translation	 0 2 0
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance DEF labperson Appearance	{
+					texture	ImageTexture {
+						url["textures/labperson.jpg"]
+					}
+				}
+			}
+		}
+		DEF	p6 Transform
+		{
+			translation	0 2 2
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance USE labperson
+			}
+		}
+		DEF	p7 Transform
+		{
+			translation	-15 2 -15
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance USE labperson
+			}
+		}
+		DEF	p8 Transform
+		{
+			translation	15 2 15
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance USE labperson
+			}
+		}
+		DEF	p9 Transform
+		{
+			translation	-25 2 -10
+			children Shape {
+				geometry Box {
+					size 1 2 1
+				}
+				appearance USE labperson
+			}
+		}
+
+
+	]
+}
+	]
+}
+DEF	moral Transform	{
+	translation	100 -50 0
+	children [
+		Transform {
+			translation	0 25 -1
+			children Shape{
+				geometry Box {
+					size 25 15 1
+				}
+				appearance Appearance {
+					texture	ImageTexture
+					{
+						url["textures/trampout.jpg"]
+					}
+				}
+			}
+		}
+		Transform {
+			translation	5 25 -2
+			rotation 0 1 0 3.14
+			children Shape {
+				geometry Text {
+					string ["'Missiles should be pointy not round'","- Major General Aladeen", "The Dictator 2012"]
+					fontStyle FontStyle {
+					 family [ "Serenity", "SERIF" ]
+    				}
+				}
+				appearance Appearance {
+					material Material {diffuseColor  1 0 0}
+				}
+			}
+		}
+	]
+}
+
+DEF	startbut Transform {
+	translation	 220 2 25
+	children [
+			DEF cartouch TouchSensor	{}
+			Transform {
+				rotation 0 0 1 1.57
+				children Shape {
+		geometry Cylinder {
+			height 1
+			radius 2
+		}
+		appearance Appearance {
+					texture	ImageTexture
+					{
+						url["textures/start.jpg"]
+					}
+				}
+
+	}
+
+			}
+			
+
+	]
+	
+
+}
+DEF	israel Transform
+{
+	translation	-200 0 0
+	children [
+		Inline {url["Ground.wrl"]}
+	]
+}
+DEF	tramp Transform	{
+	translation	-200 0 0
+	children [
+		Transform {
+			translation	0 4 0
+			children Shape {
+				geometry Cylinder {
+					height 0.5
+					radius 4.2
+				}
+			appearance Appearance {
+					texture	ImageTexture {
+						url["textures/trampout.jpg"]
+					}
+				}
+			}
+		}
+		Transform {
+			translation	0 4 0
+			children Shape {
+				geometry Cylinder {
+					height 0.6
+					radius 4
+				}
+				appearance Appearance {
+					texture	ImageTexture {
+						url["textures/trampin.jpg"]
+					}
+				}
+			}
+		}
+		Transform {
+			translation	2.9 1.75 0
+			children Shape {
+				geometry Cylinder {
+					height 3.5
+					radius 0.2
+				}
+				appearance DEF legs Appearance {
+						texture	ImageTexture {
+						url["textures/commonpiepe.jpg"]
+					}
+				}
+			}
+		}
+		Transform {
+			translation	-2.9 1.75 0
+			children Shape {
+				geometry Cylinder {
+					height 3.5
+					radius 0.2
+				}
+				appearance USE legs
+			}
+		}
+		Transform {
+			translation	0 1.75 2.9
+			children Shape {
+				geometry Cylinder {
+					height 3.5
+					radius 0.2
+				}
+				appearance USE legs
+			}
+		}
+		Transform {
+			translation	0 1.75 -2.9
+			children Shape {
+				geometry Cylinder {
+					height 3.5
+					radius 0.2
+				}
+				appearance USE legs
+			}
+		}
+	]
+}
+DEF	mounts Transform
+{
+	children [
+		DEF	mount1 Transform {
+			translation	0 0 25
+			children Shape {
+				geometry Cone {
+					height 100
+					bottomRadius 55
+				}
+				appearance DEF mountss Appearance {
+					texture	ImageTexture {
+						url	["textures/mountains.jpg"]
+					}
+				}
+			}
+		}
+		DEF	mount2 Transform {
+			translation	0 0 -25
+			children Shape {
+				geometry Cone {
+					height 75
+					bottomRadius 45
+				}
+				appearance USE mountss
+			}
+		}
+		DEF	mount3 Transform {	
+			children Shape {
+				geometry Cone {
+					height 69
+					bottomRadius 66
+				}
+				appearance USE mountss
+			}
+		}
+	]
+
+}
+
+DEF	carsgrp Group	{
+	children
+	[
+		DEF	car1 Transform {
+	translation	250 2 0
+
+	children [
+	
+		DEF cars Transform
+		{
+			children [
+			Inline { url ["car.wrl"] }
+		]
+		}
+
+		
+	]
+} ,
+DEF	car2 Transform {
+	translation	250 2 -5
+
+	children [
+	USE cars 
+	]
+} ,
+DEF	car3 Transform {
+	translation	250 2 5
+
+	children [
+	USE cars 
+	]
+}
+	]
+}
+
+DEF timer0 TimeSensor {
+	cycleInterval 12
+	
+	loop FALSE
+}
+DEF timer1 TimeSensor {
+	cycleInterval 30
+	loop FALSE
+}
+DEF	carmover1 PositionInterpolator {
+	key[0 0.5 0.8 1]
+	keyValue [
+		250 2 0
+	   160 2 0 
+	   160 2 0
+	   160 2 0
+	]
+}
+DEF	carmover2 PositionInterpolator {
+	key[0 0.5 0.8 1]
+	keyValue [
+		250 2 -5
+		160 2 -5
+	    160 2 -5
+		160 2 -5
+
+	]
+}
+DEF	carmover3 PositionInterpolator {
+	key[0 0.5 0.8 1]
+	keyValue [
+		250 2 5 
+		160 2 5
+		160 2 5
+		160 2 5
+
+	]
+}
+DEF	peoplemover1 PositionInterpolator {
+		key[0 0.5 0.8 1]
+	keyValue [
+		51 2 0
+		51 2 0
+		10 2 10
+		10 2 10
+
+	]	
+}
+DEF	peoplemover2 PositionInterpolator {
+		key[0 0.5 0.8 1]
+	keyValue [
+		51 2 1.5
+		51 2 1.5
+		10 2 10
+		10 2 10
+
+	]	
+}
+DEF	peoplemover3 PositionInterpolator {
+		key[0 0.5 0.8 1]
+	keyValue [
+		51 2 -1.5
+		51 2 -1.5
+		10 2 10
+		10 2 10
+
+	]	
+}
+DEF	peoplemover4 PositionInterpolator {
+		key[0 0.5 0.8 1]
+	keyValue [
+		51 2 3
+		51 2 3
+		10 2 10
+		10 2 10
+
+	]	
+}
+DEF	buttonmove PositionInterpolator	{
+			key[0 0.5 0.8 1]
+	keyValue [
+		-30 -5 -20
+		-30 -5 -20
+		-30 -5 -20
+		-30 1  -20
+
+	]	
+}
+DEF missilepos1 PositionInterpolator {
+	key[0 0.15 0.19 0.23 0.27 0.31 0.35 0.39 0.43 0.47 0.51 0.55 0.59 0.65 0.875 0.9 1]
+	keyValue [
+	0 3.5 0
+	0 3.5 0
+	0 50 0
+	0 50 0
+	-270 50 30
+	-270 50 30
+	-270 8.5 30
+	-270 8.5 30
+	-270 50 30
+	-270 50 30
+	0 50 0
+	0 50 0
+	0 10 0
+	0 10 0
+	0 10 0
+	0 10 0
+
+	]
+}
+DEF	missileorient1 OrientationInterpolator {
+	key[0 0.15 0.19 0.23 0.27 0.31 0.35 0.39 0.43 0.47 0.51 0.55 0.59 0.65 0.875 0.9 1]
+	keyValue [
+		0 0 0 0
+		0 0 0 0
+		0 0 0 0
+	    0 0 1 1.57
+		0 0 1 1.57
+		0 0 1 3.14
+		0 0 1 3.14
+		0 0 0 0
+		0 0 0 0
+		0 0 1 -1.57
+		0 0 1 -1.57
+		0 0 1 -3.14
+		0 0 1 -3.14
+		0 0 1 -3.14
+		0 0 1 -3.14
+		0 0 1 -3.14
+	]
+}
+
+DEF	labdestroy PositionInterpolator	{
+	key[0 0.15 0.19 0.23 0.27 0.31 0.35 0.39 0.43 0.47 0.51 0.55 0.59 0.65 0.875 0.9 1]
+	keyValue [
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 0 0
+	100 -30 0
+	100 -30 0
+	100 -30 0
+	]
+}
+DEF	moralup PositionInterpolator	{
+	key[0 0.15 0.19 0.23 0.27 0.31 0.35 0.39 0.43 0.47 0.51 0.55 0.59 0.65 0.875 0.9 1]
+	keyValue [
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 -50 0
+	100 25 0
+	]
+}
+
+DEF	Fireup PositionInterpolator	{
+	key[0 0.15 0.19 0.23 0.27 0.31 0.35 0.39 0.43 0.47 0.51 0.55 0.59 0.65 0.875 0.9 1]
+	keyValue [
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 -60  0
+		100 0 0
+		100 -60 0
+		100 -60 0
+		]
+}
+
+
+
+ROUTE touchbutton.touchTime TO	timer1.startTime
+ROUTE timer1.fraction_changed TO missilepos1.set_fraction
+ROUTE timer1.fraction_changed TO missileorient1.set_fraction
+ROUTE timer1.fraction_changed TO labdestroy.set_fraction
+ROUTE timer1.fraction_changed TO Fireup.set_fraction
+ROUTE timer1.fraction_changed TO moralup.set_fraction
+
+
+ROUTE missilepos1.value_changed TO missile.translation
+ROUTE missileorient1.value_changed  TO missile.rotation
+
+
+ROUTE labdestroy.value_changed TO labbase.translation
+
+ROUTE Fireup.value_changed  TO Fire.translation
+
+ROUTE moralup.value_changed	TO moral.translation
+
+ROUTE cartouch.touchTime TO	timer0.startTime
+ROUTE timer0.fraction_changed TO carmover1.set_fraction
+ROUTE timer0.fraction_changed TO carmover2.set_fraction
+ROUTE timer0.fraction_changed TO carmover3.set_fraction
+ROUTE timer0.fraction_changed TO peoplemover1.set_fraction
+ROUTE timer0.fraction_changed TO peoplemover2.set_fraction
+ROUTE timer0.fraction_changed TO peoplemover3.set_fraction
+ROUTE timer0.fraction_changed TO peoplemover4.set_fraction
+ROUTE timer0.fraction_changed TO buttonmove.set_fraction
+
+ROUTE carmover1.value_changed TO car1.translation
+ROUTE carmover2.value_changed TO car2.translation
+ROUTE carmover3.value_changed TO car3.translation
+
+ROUTE peoplemover1.value_changed TO	p1.translation
+ROUTE peoplemover2.value_changed TO	p2.translation
+ROUTE peoplemover3.value_changed TO	p3.translation
+ROUTE peoplemover4.value_changed TO	p4.translation
+
+ROUTE buttonmove.value_changed TO button.translation
+
+ROUTE touchbutton.touchTime TO AC1.startTime
+
+DEF cameras Group {
+   children [
+      DEF c1 Viewpoint {
+         position 100 20 0
+		 fieldOfView 0.39
+		 orientation 0 1 0 -1.57
+         description "Normal Entry"
+      }
+	  DEF c2 Viewpoint {
+		  position 125 5 -40
+         orientation 0 1 0 -3.14
+		  description "2 Entry"
+	  }
+      DEF c3 Viewpoint {
+         position 70 5 10
+         orientation 0 1 0 0
+         description "Aerial View"
+      }
+      DEF c4 Viewpoint {
+         position -275 25 0
+		 orientation 0 1 0  -1.57
+         description "HeadCam"
+      }
+	   DEF c5 Viewpoint {
+		  position 150 15 0
+         orientation 0 1 0 1.57
+		  description "2 Entry"
+	  }
+	   DEF c6 Viewpoint {
+		  position 100 50 -45
+         orientation 0 1 0 -3.14
+		  description "5 Entry"
+	  }
+   ]
+}
+
+				
